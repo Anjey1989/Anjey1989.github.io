@@ -1,0 +1,51 @@
+body {
+    margin: 0px;
+}
+nav {
+    height: 50px;
+    width: 100%;
+    background: rgba(75, 22, 119, 0.4);
+    position: fixed;
+}
+
+nav .logo {
+    height: 100%;
+}
+
+nav .logo img {
+    height: 100%;
+}
+
+nav .menu {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 24px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, .8);
+}
+
+nav .nav-wrapper {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+
+nav .menu:hover > ul {
+    display: block;
+}
+
+ul {
+    display: none;
+    right: 0;
+    margin: 0;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    background: rgba(75, 22, 119, 0.4);
+    list-style: none;
+}
