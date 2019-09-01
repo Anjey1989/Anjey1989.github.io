@@ -5,33 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="mainTask.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>mainTask</title>
 </head>
 <body>
-    <button type="button" class="btn btn-primary" id="buttonForm">Open Form</button>
-    <div id="inputForm" class="d-none">
-    <div class="col-md-3" >
-        <form class="needs-validation" novalidate>
+    <div class="row">
+        <div class="col-md-4 container">
             <div class="row">
-                <label for="userName">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                    required
+                <div class="col-md-8 inputForm d-none">
+                    <label for="username">
+                        Username
+                    </label>
+                    <input type="text" class="form-control" id="firstName" placeholder value required>
+                    <div class="invalid-feedback userNameInvalid">
+                        Valid username is required.
+                    </div>
+                    <label for="email">
+                        E-mail
+                    </label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback emailInvalid">
+                         Valid e-mail is required.
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="specialDealCheckbox">
+                        <label class="form-check-label" for="specialDealCheckbox">Send me special deals</label>
+                    </div>
+                    <div class="dropdown d-none">
+                        <div>
+                            I am willing to receive them every:
+                        </div>
+                        <select id="cycleSelect" class="browser-default custom-select">
+                            <option value="1">hour</option>
+                            <option value="2">day</option>
+                            <option value="3">week</option>
+                            <option value="4">month</option>
+                        </select>
+                    </div>
+                    <div >
+                        <button type="submit" class="buttonForSubscribe">
+                            Subscribe
+                        </button>
+                    </div>
                 </div>
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                    required
+                <div class="col buttonForForm">
+                    <button type="button" class="btn btn-warning">
+                        Open Form
+                    </button>
                 </div>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="specialDealCheckbox">
-                <label class="form-check-label" for="specialDealCheckbox">Send me special deals</label>
-            </div>
-            </form>
-    </div>
+        </div>
+        <div class="col-md-7 container">
+            <table id="userTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Special-offers</th>
+                        <th scope="col">offer-cycle</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>andrejs</td>
+                        <td>andrejs@gmail.com</td>
+                        <td>true</td>
+                        <td>hour</td>
+                        <td><button class="del">delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>marija</td>
+                        <td>marija@gmail.com</td>
+                        <td>false</td>
+                        <td>null</td>
+                        <td><button class="del">delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>andis</td>
+                        <td>andis@gmail.com</td>
+                        <td>true</td>
+                        <td>null</td>
+                        <td><button class="del">delete</button></td>
+                    </tr>
+                </tbody>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
